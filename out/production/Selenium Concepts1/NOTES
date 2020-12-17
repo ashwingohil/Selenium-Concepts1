@@ -1,0 +1,19 @@
+Goto url = http://demo.guru99.com/V4/
+Inspect all the elements as written in object.properties and you will find values by name or class
+Fill all in the object.properties file
+
+Test Case 1:
+Goto http://demo.guru99.com/V4/
+Enter User ID
+Enter Password
+Click Reset
+
+Test Case 2:
+Goto http://demo.guru99.com/V4/
+Enter User ID
+Enter Password
+Click Login
+
+
+This is important for UIOperation.java class. Look a the test case. KEyword is written as GOTOURL,SETTEXT,CLICK. I have objectname which is findelement insepct
+attribute value which is basically of type "name"/ findby name. So name here has become objecttype and value is what we need to sendkeys

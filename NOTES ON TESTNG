@@ -1,0 +1,47 @@
+TestNG jar is to be imported from Project Structure in IntelliJ - Modules - Dependencies by clicking on the Plus button
+
+Refer to this video - https://www.youtube.com/watch?v=kjv3MNDo52Y
+
+A class is created. Always use a project for Test in Test NG but you can also do it normal way of directory(Project-New) but add from project structure
+the dependencies.
+A class is usually written the way it is. Each method or tests are marked with @Test(priority = 1) and so on above every method(tests). These
+are called annotations. TestNG is also imported on the class with 
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+When you have written the class, the main method is not required. Click on the directory(project name) on left pane. Right click and see there will be a option as
+"Create TestNG XML". Then testNG xml will be listed on the left pane. Usually a refresh in required (google it for shortcut") but latest version dont need it.
+Double click on testNG.xml
+It will be like this
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/ashwin/IdeaProjects/Selenium Concepts">
+
+
+        <classes>
+            <class name="TestNGExample"/>
+            <class name="Bundle1"/>
+        </classes>
+
+    </test>
+</suite>
+
+
+Here <classes> will be entered. IT will auto generate and mention class <class name = "..."/> Add / just as shown in above.
+
+In Intellij thats not all. Now goto Run →Edit Configuration → Templates →TestNG
+In xml file there should be XML should have the https endpoint https://testng.org/testng-1.0.dtd just as it is above
+
+Add this--> -Dtestng.dtd.http=true in VM Options
+
+-ea -Dtestng.dtd.http=true  <------
+
+Apply and OK
+
+NOW, for test report generation!
+Goto Run - Edit Configuration - Select testNG.xml not in templates
+Goto Listeners and add from plus sign and add
+org.testng.reporters.EmailReporter
+org.testng.reporters.FailedReporter

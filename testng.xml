@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/ashwin/IdeaProjects/Selenium Concepts1">
+        <classes>
+
+            <class name="ExcelExport.ReadExcelFile"/>
+            <class name="Operation.UIOperation"/>
+            <class name="Operation.ReadObject"/>
+            <class name="TestCases.ExecuteTest"/>
+            <class name="TestNGExample"/>
+            <class name="VerifyTitleTestNG"/>
+            <class name="VerifyTitle2TestNG"/>
+            <class name="com.group.TestNG_GroupExample.TC_Class1TestNG">
+                <methods>
+                    <exclude name="tc02_toVerifyLaunchPage"/>
+                    <!--  even this is not working -->
+                </methods>
+                <!--  note that packagename.class is here -->
+            </class>
+            <class name="PriorityTestNGExample"/>
+        </classes>
+        <!-- for TC_Class1TestNG -->
+
+        <groups>
+            <run>
+                <include name="bonding"/>
+            </run>
+        </groups>
+
+
+
+
+    </test>
+</suite>
